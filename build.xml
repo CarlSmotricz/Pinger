@@ -1,0 +1,24 @@
+<project name="Pinger" default="jars">
+	
+	<fileset id="dep-jars" dir="3rdPty" includes="*.jar"/>
+	
+	<target name="compile">
+		<javac source="1.6" target="1.6"  debug="true" debuglevel="source" 
+			   srcdir="src" destdir="bin" includeAntRuntime="false">
+			<classpath refid="dep-jars"/>
+		</javac>
+	</target>
+
+	<target name="dist-jar">
+		<jar destfile="build/Pinger.jar">
+			<fileset dir="bin"/>
+			<fileset refid="dep-jars"/>
+			<manifest>
+				<attribute name="Main-Class" value="pinger.Main"/>
+			</manifest>
+		</jar>
+	</target>
+	
+	<target name="jars" depends="dist-jar"/>
+	
+</project>
