@@ -14,7 +14,7 @@
 			<fileset dir="bin"/>
 			<fileset refid="dep-jars"/>
 			<manifest>
-				<attribute name="Main-Class" value="pinger.Main"/>
+				<attribute name="Main-Class" value="com.smotricz.pinger.Launcher"/>
 			</manifest>
 		</jar>
 	</target>
